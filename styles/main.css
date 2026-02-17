@@ -36,4 +36,32 @@ h1 {
   text-align: center;
 }
 
+.question {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  font-size: 25px;
+  color: #ffffff;
+  color: #8100D1;
+}
+
+.question button {
+  margin-top: 10px;
+  background-color: #8100D1;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #B500B2;
+  color: #ffffff;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -35,3 +35,35 @@ h1{font-size: 20px;
     text-align: variables.$align-items;
 
 }
+.question{
+    display: flex;
+    flex-direction: column;
+    
+     text-align: variables.$align-items;
+     padding: 20px;
+     font-size: 25px;
+     color: variables.$text-color;
+      color:variables.$question-bacolor;
+    
+}
+.question button{
+
+      margin-top: 10px;
+      background-color: variables.$question-bacolor;
+       color: variables.$text-color;
+       padding: 20px;
+       border-radius: 15px;
+
+
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     padding: 10px;
+       border-radius: 15px;
+        background-color: variables.$btn-color;
+         color: variables.$text-color;
+
+
+}
