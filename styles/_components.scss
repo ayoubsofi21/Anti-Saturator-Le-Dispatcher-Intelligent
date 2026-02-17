@@ -1,0 +1,37 @@
+
+@use "variables";
+
+body {
+  background-color:variables.$primary-color;
+  font-size:variables.$font-size;
+} 
+header{
+   text-align: variables.$align-items;
+   background-color: variables.$color-header;
+  color: variables.$text-color
+}
+.container{
+box-shadow: variables.$box-shadow;
+}
+.cercle{
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+   padding: 15px;
+   margin-right: 16px;
+    font-size: 25px;
+    border-radius: 10px 10px 5px lightblue;
+
+}
+.dot{
+
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+h1{font-size: 20px;
+    text-align: variables.$align-items;
+
+}
