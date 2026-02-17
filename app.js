@@ -5,3 +5,6 @@ const tasks = [
   { id: 2, title: "Tâche B", urgency: 3, importance: 4, effort: 1 },
   { id: 3, title: "Tâche C", urgency: 4, importance: 4, effort: 2 },
 ];
+tasks.forEach((task) => {
+  console.log(task.title + "(Score): " + calculateScore(task));
+});
