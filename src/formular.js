@@ -29,21 +29,3 @@ addBtn.addEventListener("click", function () {
     displayTasks();
     titleInput.value = "";
 });
-
-function displayTasks() {
-
-    taskList.innerHTML = "";
-
-    tasks.forEach( (elm)=> {
-
-        taskList.innerHTML = 
-        `
-            <h2 class="h2">${elm.title}</h2>
-            <p>Urgence: ${elm.urgency}</p>
-            <p>Importance: ${elm.importance}</p>
-            <p>Effort: ${elm.effort}</p>
-        `;
-
-        
-    });
-}
