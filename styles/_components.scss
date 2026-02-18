@@ -58,12 +58,52 @@ h1{font-size: 20px;
 }
 .btn{
     display: flex;
-    justify-content: center;
-    align-items: center;
+  
+    text-align: right;
+    align-items: flex-end;
+    margin: auto;
      padding: 10px;
        border-radius: 15px;
+       width: 70px;
         background-color: variables.$btn-color;
          color: variables.$text-color;
+         text-align: variables.$align-items;
 
+
+}
+
+
+.bouton-cercle {
+  /* 1. Dimensions égales pour un cercle parfait */
+  width: 30px;
+  height: 30px;
+   text-align: center;
+    align-items: flex-end;
+    bottom: 12px;
+    margin: auto;
+    margin-top: 20px;
+
+  
+  /* 2. Rendre l'élément rond */
+  border-radius: 50%;
+  
+  /* 3. Centrer le contenu (le nombre) */
+  display: flex;
+  justify-content: end;
+  font-size:30px;
+  
+  
+  /* 4. Style du bouton (optionnel) */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  
+  
+ 
+}
+.lbtn{
+    display: flex;
+    gap: 55px;
+    align-items: center;
 
 }
