@@ -13,7 +13,7 @@
     <label>Titre :</label>
                  <input
                         type="text" placeholder="Entrer votre Tache ....."  class="input"
-                     
+                      id="task-title"
                     />
 
     <label class="label" >Urgence : </label>
@@ -25,6 +25,7 @@
                         oninput="
                             this.nextElementSibling.textContent = this.value
                         "
+                         id="task-urgence"
                     />
 
                     <span>5</span>
@@ -37,6 +38,7 @@
                         oninput="
                             this.nextElementSibling.textContent = this.value
                         "
+                         id="task-importance"
                     />
 
                     <span>5</span>
@@ -49,13 +51,14 @@
                         oninput="
                             this.nextElementSibling.textContent = this.value
                         "
+                         id="task-effort"
                     />
 
                     <span>5</span>
     </div>
     <div class="cententbtn">
 
-        <button class="btn">Ajouter</button>
+        <button id="add-btn" >Ajouter</button>
     </div>
     <main class="main">
       
