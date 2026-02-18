@@ -18,5 +18,5 @@ const hardTask = {
 // tasks.forEach((task) => {
 //   console.log(task.title + "(Score): " + calculateScore(task));
 // });
-console.log("(Score): " + calculateScore(hardTask));
+// console.log("(Score): " + calculateScore(hardTask));
 console.log("Low energy:", adaptScoreToEnergy(hardTask, 4));
