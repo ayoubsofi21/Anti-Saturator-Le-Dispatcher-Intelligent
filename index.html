@@ -1,77 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
+
 <body>
     <header>Anti-Saturator</header>
     <h1>Ajouter Une Tache</h1>
     <div class="div">
-    <label>Titre :</label>
-                 <input
-                        type="text" placeholder="Entrer votre Tache ....."  class="input"
-                      id="task-title"
-                    />
+        <label>Titre :</label>
+        <input type="text" placeholder="Entrer votre Tache ....." class="input" id="task-title" />
 
-    <label class="label" >Urgence : </label>
-                  <input
-                        type="range"
-                        min="1"
-                        max="10"
-                        value="5"
-                        oninput="
+        <label class="label">Urgence : </label>
+        <input type="range" min="1" max="5" value="5" oninput="
                             this.nextElementSibling.textContent = this.value
-                        "
-                         id="task-urgence"
-                    />
+                        " id="task-urgence" />
 
-                    <span>5</span>
-    <label class="label" >Importance : </label>
-                 <input
-                        type="range"
-                        min="1"
-                        max="10"
-                        value="5"
-                        oninput="
+        <span>5</span>
+        <label class="label">Importance : </label>
+        <input type="range" min="1" max="5" value="5" oninput="
                             this.nextElementSibling.textContent = this.value
-                        "
-                         id="task-importance"
-                    />
+                        " id="task-importance" />
 
-                    <span>5</span>
-    <label class="label" >Effort : </label>
-               <input
-                        type="range"
-                        min="1"
-                        max="10"
-                        value="5"
-                        oninput="
+        <span>5</span>
+        <label class="label">Effort : </label>
+        <input type="range" min="1" max="5" value="5" oninput="
                             this.nextElementSibling.textContent = this.value
-                        "
-                         id="task-effort"
-                    />
+                        " id="task-effort" />
 
-                    <span>5</span>
+        <span>5</span>
     </div>
     <div class="cententbtn">
 
-        <button id="add-btn" >Ajouter</button>
+        <button id="add-btn">Ajouter</button>
     </div>
     <main class="main">
-      
-        <h2 class="h2">Titre de Tache</h2>
-        <p>Urgence</p>
-         <p>Importance</p>
-         <p>Effort</p>
+
+        
+
+        <div id="task-list">
+
+        </div>
 
 
     </main>
     <div class="bt">
-    <button class="bttn">Passer</button>
-    <button>Supprimer</button>
+        <button class="bttn">Passer</button>
+        <button>Supprimer</button>
     </div>
+
+    <script src="/src/formular.js"></script>
+
 </body>
+
 </html>
