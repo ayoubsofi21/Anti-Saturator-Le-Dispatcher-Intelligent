@@ -1,10 +1,14 @@
-import { calculateScore } from "./modules/sorter.js";
-
-const tasks = [
-  { id: 1, title: "Tâche A", urgency: 5, importance: 5, effort: 2 },
-  { id: 2, title: "Tâche B", urgency: 3, importance: 4, effort: 1 },
-  // { id: 3, title: "Tâche C", urgency: 4, importance: 4, effort: 2 },
-];
-tasks.forEach((task) => {
-  console.log(task.title + "(Score): " + calculateScore(task));
-});
+export function calculateScore(task) {
+  const score = task.urgency * 0.4 + task.importance * 0.4 - task.effort * 0.2;
+  return score;
+}
+export function adaptScoreToEnergy(task, energy) {
+  let score = calculateScore(task);
+  if (energy <= 3 && task.effort >= 4) {
+    score -= 2;
+  }
+  if (energy >= 7 && task.effort >= 4) {
+    score += 1;
+  }
+  return score;
+}
