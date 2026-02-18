@@ -12,3 +12,13 @@ export function adaptScoreToEnergy(task, energy) {
   }
   return score;
 }
+
+export function sortTasks(tasks, energy) {
+  for (let i = 0; i < tasks.length; i++) {
+    tasks[i].score = adaptScoreToEnergy(tasks[i], energy);
+  }
+  tasks.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  return tasks;
+}
