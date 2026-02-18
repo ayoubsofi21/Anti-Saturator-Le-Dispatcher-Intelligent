@@ -1,4 +1,4 @@
-import { calculateScore } from "./sorter.js";
+import { calculateScore } from "./modules/sorter.js";
 
 const tasks = [
   { id: 1, title: "Tâche A", urgency: 5, importance: 5, effort: 2 },
