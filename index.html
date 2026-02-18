@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <header>Anti-Saturator</header>
+    <h1>Ajouter Une Tache</h1>
+    <div class="div">
+    <label>Titre :</label>
+                 <input
+                        type="text" placeholder="Entrer votre Tache ....."  class="input"
+                     
+                    />
+
+    <label class="label" >Urgence : </label>
+                  <input
+                        type="range"
+                        min="1"
+                        max="10"
+                        value="5"
+                        oninput="
+                            this.nextElementSibling.textContent = this.value
+                        "
+                    />
+
+                    <span>5</span>
+    <label class="label" >Importance : </label>
+                 <input
+                        type="range"
+                        min="1"
+                        max="10"
+                        value="5"
+                        oninput="
+                            this.nextElementSibling.textContent = this.value
+                        "
+                    />
+
+                    <span>5</span>
+    <label class="label" >Effort : </label>
+               <input
+                        type="range"
+                        min="1"
+                        max="10"
+                        value="5"
+                        oninput="
+                            this.nextElementSibling.textContent = this.value
+                        "
+                    />
+
+                    <span>5</span>
+    </div>
+    <button class="btn">Ajouter</button>
+    <main class="main">
+      
+        <h2 class="h2">Titre de Tache</h2>
+        <p>Urgence</p>
+         <p>Importance</p>
+         <p>Effort</p>
+
+
+    </main>
+</body>
+</html>
