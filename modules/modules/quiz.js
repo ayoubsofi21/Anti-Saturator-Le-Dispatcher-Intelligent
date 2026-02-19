@@ -4,6 +4,13 @@ const answerButtons = document.querySelectorAll(".question button");
 const nextBtn = document.querySelector(".btn");
 const circleButtons = document.querySelectorAll(".bouton-cercle");
 
+// Création du message d'erreur
+const message = document.createElement("p");
+message.style.color = "red";
+message.style.textAlign = "center";
+message.style.marginTop = "10px";
+document.querySelector(".question").appendChild(message);
+
 // Questions
 const questions = [
   {
@@ -36,8 +43,9 @@ const questions = [
 ];
 
 let currentQuestion = 0;
+let selectedAnswer = null;
 
-// Afficher une question
+// Fonction pour afficher une question
 function showQuestion(index) {
 
   const q = questions[index];
@@ -48,29 +56,52 @@ function showQuestion(index) {
   // changer les réponses
   answerButtons.forEach((button, i) => {
     button.textContent = q.answers[i];
+    button.style.backgroundColor = ""; // reset couleur
   });
 
-  // changer la couleur des cercles
+  // reset sélection
+  selectedAnswer = null;
+
+  // supprimer message erreur
+  message.textContent = "";
+
+  // changer couleur des cercles
   circleButtons.forEach((circle, i) => {
-    if (i === index) {
-      circle.style.backgroundColor = "blue";
-    } else {
-      circle.style.backgroundColor = "gray";
-    }
+    circle.style.backgroundColor = i === index ? "blue" : "gray";
   });
 }
 
+// Sélection d'une réponse
+answerButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+
+    selectedAnswer = button.textContent;
+
+    // effet visuel
+    answerButtons.forEach(btn => btn.style.backgroundColor = "");
+    button.style.backgroundColor = "lightgreen";
+
+    // enlever message erreur
+    message.textContent = "";
+  });
+});
+
 // Bouton Next
 nextBtn.addEventListener("click", () => {
+
+  if (selectedAnswer === null) {
+    message.textContent = "⚠️ Veuillez choisir une réponse avant de continuer.";
+    return;
+  }
 
   currentQuestion++;
 
   if (currentQuestion < questions.length) {
     showQuestion(currentQuestion);
   } else {
-    title.textContent = "Quiz terminé 🎉";
     document.querySelector(".question").style.display = "none";
-    nextBtn.style.display = "none";
+    nextBtn.textContent = "Quiz terminé 🎉";
+    message.textContent = "";
   }
 
 });
