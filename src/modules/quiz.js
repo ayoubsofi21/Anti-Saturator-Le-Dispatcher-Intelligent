@@ -46,7 +46,7 @@ let currentQuestion = 0;
 let selectedAnswer = null;
 
 // Fonction pour afficher une question
-function showQuestion(index) {
+ export function showQuestion(index) {
 
   const q = questions[index];
 
@@ -79,7 +79,7 @@ answerButtons.forEach((button) => {
 
     // effet visuel
     answerButtons.forEach(btn => btn.style.backgroundColor = "");
-    button.style.backgroundColor = "lightgreen";
+    button.style.backgroundColor = "Hotpink";
 
     // enlever message erreur
     message.textContent = "";
@@ -90,7 +90,7 @@ answerButtons.forEach((button) => {
 nextBtn.addEventListener("click", () => {
 
   if (selectedAnswer === null) {
-    message.textContent = "⚠️ Veuillez choisir une réponse avant de continuer.";
+    message.textContent = " Veuillez choisir une réponse avant de continuer.";
     return;
   }
 
