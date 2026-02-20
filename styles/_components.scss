@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 @use "variables";
 
@@ -92,3 +93,87 @@ align-items: center;
     background-color: #8100D1;
 }
 
+=======
+@use "variables";
+
+body {
+  background-color: variables.$primary-color;
+  font-size: variables.$font-size;
+}
+
+header {
+  text-align: variables.$align-items;
+  background-color: variables.$color-header;
+  color: variables.$text-color;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.container {
+  box-shadow: variables.$box-shadow;
+  width: 60%;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: variables.$align-items;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  text-align: variables.$align-items;
+  padding: 20px;
+  font-size: 20px;
+  color: variables.$question-bacolor;
+}
+
+.question button {
+  margin-top: 10px;
+  background-color: variables.$question-bacolor;
+  color: variables.$text-color;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.question button:hover {
+  opacity: 0.8;
+}
+
+.btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 15px;
+  width: 100px;
+  background-color: variables.$btn-color;
+  color: variables.$text-color;
+  border: none;
+  cursor: pointer;
+}
+
+.lbtn {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bouton-cercle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  color: white;
+  border: none;
+}
+>>>>>>> data-interaction
