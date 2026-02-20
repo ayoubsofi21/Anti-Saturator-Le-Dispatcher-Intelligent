@@ -9,51 +9,26 @@
 </head>
 
 <body>
-    <header>Anti-Saturator</header>
-    <h1>Ajouter Une Tache</h1>
-    <div class="div">
-        <label>Titre :</label>
-        <input type="text" placeholder="Entrer votre Tache ....." class="input" id="task-title" />
-
-        <label class="label">Urgence : </label>
-        <input type="range" min="1" max="5" value="5" oninput="
-                            this.nextElementSibling.textContent = this.value
-                        " id="task-urgence" />
-
-        <span>5</span>
-        <label class="label">Importance : </label>
-        <input type="range" min="1" max="5" value="5" oninput="
-                            this.nextElementSibling.textContent = this.value
-                        " id="task-importance" />
-
-        <span>5</span>
-        <label class="label">Effort : </label>
-        <input type="range" min="1" max="5" value="5" oninput="
-                            this.nextElementSibling.textContent = this.value
-                        " id="task-effort" />
-
-        <span>5</span>
-    </div>
-    <div class="cententbtn">
-
-        <button id="add-btn">Ajouter</button>
-    </div>
-    <main class="main">
+   
+   
+    
+   
+  <main class="main">
 
         
 
-        <div id="task-list">
+      
+
+    </main>
+      <div id="task-list">
 
         </div>
 
-
-    </main>
-    <div class="bt">
   
-        <button class="bttn">Supprimer</button>
-    </div>
 
     <script src="/src/formular.js"></script>
+    <script type="module" src="./src/app.js"></script>
+
 
 </body>
 

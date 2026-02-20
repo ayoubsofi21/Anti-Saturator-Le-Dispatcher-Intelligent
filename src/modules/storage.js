@@ -1,4 +1,4 @@
-import { mockTasks }  from "../data/mockTasks.js";
+import { mockTasks }  from "./data/mockTasks.js";
 export function getTasks (){
     const data = localStorage.getItem("tasks");
     if(data){
