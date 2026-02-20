@@ -3,7 +3,6 @@ const title = document.querySelector("h1");
 const answerButtons = document.querySelectorAll(".question button");
 const nextBtn = document.querySelector(".btn");
 const circleButtons = document.querySelectorAll(".bouton-cercle");
-
 // Création du message d'erreur
 const message = document.createElement("p");
 message.style.color = "red";
@@ -46,7 +45,7 @@ let currentQuestion = 0;
 let selectedAnswer = null;
 
 // Fonction pour afficher une question
- export function showQuestion(index) {
+ export const showQuestion=(index) => {
 
   const q = questions[index];
 
@@ -108,3 +107,4 @@ nextBtn.addEventListener("click", () => {
 
 // Initialisation
 showQuestion(currentQuestion);
+

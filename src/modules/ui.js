@@ -3,8 +3,7 @@ export const headerFun = () => {
 };
 
 export const btnNumber = () => {
-    return `
-        <div class="lbtn">
+    return `<div class="lbtn">
             <button class="bouton-cercle">1</button>
             <button class="bouton-cercle">2</button>
             <button class="bouton-cercle">3</button>
@@ -13,8 +12,7 @@ export const btnNumber = () => {
 };
 
 export const btnQuestion = () => {
-    return `
-        <div class="question">
+    return ` <div class="question">
             <h1></h1>
             <button></button>
             <button></button>
@@ -25,9 +23,9 @@ export const btnQuestion = () => {
 };
 
 export const btnNext = () => {
-    return `
-        <div>
+    return ` <div>
             <button class="btn">Next</button>
         </div>
     `;
 };
+
