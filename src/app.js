@@ -1,6 +1,7 @@
 import {getTopTaskOptimized} from "./modules/sorter.js"
 import { displayTask } from "./modules/ui.js";
 
+
 let SkippedTasks=[];
 
 export function handleSkip(tasks) {
@@ -13,8 +14,14 @@ if (nextTask) {
     displayTask(nextTask)
 } else {
     console.log("Il n'y a plus de tâches disponibles.");
-    
-    
 }
-    
+}
+
+
+export function updateFocus(tasks){
+    const topTask = getTopTaskOptimized(tasks);
+    if (topTask) {
+        displayTask(topTask)
+    }
+
 }

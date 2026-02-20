@@ -1,9 +1,3 @@
-// function calculateScore( task ){
-//     const imortanceWeight = task.importance * 10;
-//     const urgencyWeight = task.urgency * 5;
-//     return importanceWeight + urgencyWeight;
-// }
-
 export function getTopTaskOptimized(tasks){
     if ( tasks.length === 0) return null;
 
