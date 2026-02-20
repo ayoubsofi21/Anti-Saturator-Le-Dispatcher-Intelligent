@@ -82,15 +82,7 @@ p {
 
 .cententbtn {
   align-items: center;
-}
-
-.bt {
-  align-items: center;
-  gap: 10px;
-}
-
-.bttn {
-  background-color: #8100D1;
+  margin: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
