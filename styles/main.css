@@ -1,0 +1,96 @@
+body {
+  background-color: #FFF9FF;
+  font-size: 45px;
+}
+
+header {
+  text-align: center;
+  background-color: #FFA47F;
+  color: #ffffff;
+}
+
+h1 {
+  background-color: #8100D1;
+  font-size: 25px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  margin: 30px;
+}
+
+div {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.input {
+  height: 30px;
+  width: 300px;
+  margin: 20px;
+}
+
+button {
+  background-color: #FFA47F;
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+.main h2, p {
+  margin: 20px 35px;
+  background-color: #8100D1;
+  width: 300px;
+  height: 35px;
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+}
+
+.h2 {
+  background-color: #8100D1;
+  width: 350px;
+  height: 45px;
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+p {
+  background-color: #FFA47F;
+  width: 300px;
+  height: 40px;
+  border-radius: 16px;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+.label {
+  margin: 20px;
+}
+
+.cententbtn {
+  align-items: center;
+}
+
+.bt {
+  align-items: center;
+  gap: 10px;
+}
+
+.bttn {
+  background-color: #8100D1;
+}
+
+/*# sourceMappingURL=main.css.map */
