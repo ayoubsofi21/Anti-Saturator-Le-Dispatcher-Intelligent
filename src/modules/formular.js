@@ -1,6 +1,6 @@
 
 import { saveTasks, getTasks } from "./storage.js"; 
-// 1. DAROURI: Import l-validation functions
+
 import { validateTitle, validateScore } from "./validator.js";
 
 export function initFormLogic() {
@@ -43,7 +43,9 @@ function renderTasks(container, tasks) {
     container.innerHTML = tasks.map(t => `
         <div class="task-item">
             <h3>${t.title}</h3>
-            <p>U: ${t.urgency} | I: ${t.importance} | E: ${t.effort}</p>
+            <p>Urgence: ${t.urgency} </p>
+             <p> Importance: ${t.importance} </p>
+              <p> Effort: ${t.effort}</p>
         </div>
     `).join('');
 }

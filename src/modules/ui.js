@@ -29,5 +29,4 @@ export const formulair = () => {
     `;
 }
 
-export const button = `<div><button id="add-btn"    class = "cententbtn" >Ajouter</button></div>`;
-export const supprimer = () => `<div><button id="clear-btn">Supprimer</button></div>`;
+export const button=`<div class='cententbtn' ><button id="add-btn">Ajouter</button></div>`; 
