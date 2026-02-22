@@ -1,141 +1,96 @@
-export const questions = [
+const quizQuestions = [
   {
-    question: "Combien d’heures dors-tu en moyenne ?",
+    question: "Combien d'heures dors-tu en moyenne ?",
     answers: [
-      "Moins de 5 heures",
-      "5–6 heures",
-      "Plus de 8 heures",
-      "7–8 heures",
+      { value: "1", text: "Moins de 5 heures" },
+      { value: "2", text: "5–6 heures" },
+      { value: "3", text: "7–8 heures" },
+      { value: "4", text: "Plus de 8 heures et je me réveille reposé" },
     ],
   },
   {
-    question: "Combien d’heures passes-tu sur ton téléphone ?",
-    answers: ["Moins de 2h", "2–4h", "5–7h", "Plus de 8h"],
+    question: "Quel est ton niveau de stress au travail ?",
+    answers: [
+      { value: "1", text: "Très faible" },
+      { value: "2", text: "Modéré" },
+      { value: "3", text: "Élevé" },
+      { value: "4", text: "Très élevé" },
+    ],
   },
   {
-    question: "Te sens-tu stressé souvent ?",
-    answers: ["Oui, tout le temps", "Parfois", "Rarement", "Jamais"],
+    question: "À quelle fréquence fais-tu de l'exercice physique ?",
+    answers: [
+      { value: "1", text: "Jamais" },
+      { value: "2", text: "1 à 2 fois par semaine" },
+      { value: "3", text: "3 à 4 fois par semaine" },
+      { value: "4", text: "Tous les jours" },
+    ],
   },
 ];
+// Track the current question and energy score
+let currentQuestion = 1; // Start at the first question
+let energyScore = 5; // Default energy score
 
-// Function to show the question based on the index
-export const showQuestion = (index) => {
-  const q = questions[index];
+export function renderQuiz() {
+  const container = document.getElementById("quiz-container");
+  container.innerHTML = `
+    <form id="quiz-form">
+      <h3>Question ${currentQuestion}:</h3>
+      ${getQuestionMarkup(currentQuestion)} <!-- Dynamically insert question markup -->
+      <button type="button" id="next-btn">Next</button>
+    </form>
+  `;
 
-  // Update the question title
-  const title = document.querySelector("h1");
-  title.textContent = q.question;
+  // Add event listener to "Next" button
+  document.getElementById("next-btn").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent form submission
 
-  // Update the answers
-  const answerButtons = document.querySelectorAll(".question button");
-  answerButtons.forEach((button, i) => {
-    button.textContent = q.answers[i];
-    button.style.backgroundColor = ""; // Reset the button color
+    // Save the user's choice
+    const selectedAnswer = document.querySelector(".quiz-button.active");
+    if (!selectedAnswer) return; // Do nothing if no answer is selected
+
+    // Save the energy score based on selected answer
+    energyScore = parseInt(selectedAnswer.value);
+
+    // Move to next question
+    if (currentQuestion < quizQuestions.length) {
+      currentQuestion++;
+      renderQuiz(); // Re-render the quiz with the next question
+    } else {
+      alert(`Vous avez terminé le quiz avec une énergie de ${energyScore}`);
+      // After the last question, you can trigger some action like showing the task form
+    }
   });
 
-  // Clear any error message
-  const message = document.querySelector(".question p");
-  message.textContent = "";
-
-  // Update the circle button colors
-  const circleButtons = document.querySelectorAll(".bouton-cercle");
-  circleButtons.forEach((circle, i) => {
-    circle.style.backgroundColor = i === index ? "blue" : "gray";
+  // Add event listeners to the answer buttons
+  const quizButtons = document.querySelectorAll(".quiz-button");
+  quizButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      // Highlight the clicked button (active state)
+      quizButtons.forEach((btn) => btn.classList.remove("active"));
+      e.target.classList.add("active");
+    });
   });
-};
+}
 
-// // Sélection des éléments
-// const title = document.querySelector("h1");
-// const answerButtons = document.querySelectorAll(".question button");
-// const nextBtn = document.querySelector(".btn");
-// const circleButtons = document.querySelectorAll(".bouton-cercle");
-// // Création du message d'erreur
-// const message = document.createElement("p");
-// message.style.color = "red";
-// message.style.textAlign = "center";
-// message.style.marginTop = "10px";
-// document.querySelector(".question").appendChild(message);
+// Function to get the markup for each question dynamically
+function getQuestionMarkup(questionNumber) {
+  const question = quizQuestions[questionNumber - 1]; // Adjust for zero-based index
+  if (!question) return ""; // If no question exists, return an empty string
 
-// // Questions
-// const questions = [
-//   {
-//     question: "Combien d’heures dors-tu en moyenne ?",
-//     answers: [
-//       "Moins de 5 heures",
-//       "5–6 heures",
-//       "Plus de 8 heures",
-//       "7–8 heures",
-//     ],
-//   },
-//   {
-//     question: "Combien d’heures passes-tu sur ton téléphone ?",
-//     answers: ["Moins de 2h", "2–4h", "5–7h", "Plus de 8h"],
-//   },
-//   {
-//     question: "Te sens-tu stressé souvent ?",
-//     answers: ["Oui, tout le temps", "Parfois", "Rarement", "Jamais"],
-//   },
-// ];
+  // Build the question and answers dynamically
+  let markup = `<h3>${question.question}</h3>`;
 
-// let currentQuestion = 0;
-// let selectedAnswer = null;
+  // Loop through the answers and create buttons for each one
+  question.answers.forEach((answer) => {
+    markup += `
+      <button type="button" class="quiz-button" value="${answer.value}">${answer.text}</button>
+    `;
+  });
 
-// // Fonction pour afficher une question
-// export const showQuestion = (index) => {
-//   const q = questions[index];
+  return markup;
+}
 
-//   // changer le titre
-//   title.textContent = q.question;
-
-//   // changer les réponses
-//   answerButtons.forEach((button, i) => {
-//     button.textContent = q.answers[i];
-//     button.style.backgroundColor = ""; // reset couleur
-//   });
-
-//   // reset sélection
-//   selectedAnswer = null;
-
-//   // supprimer message erreur
-//   message.textContent = "";
-
-//   // changer couleur des cercles
-//   circleButtons.forEach((circle, i) => {
-//     circle.style.backgroundColor = i === index ? "blue" : "gray";
-//   });
-// };
-
-// // Sélection d'une réponse
-// answerButtons.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     selectedAnswer = button.textContent;
-
-//     // effet visuel
-//     answerButtons.forEach((btn) => (btn.style.backgroundColor = ""));
-//     button.style.backgroundColor = "Hotpink";
-
-//     // enlever message erreur
-//     message.textContent = "";
-//   });
-// });
-
-// // Bouton Next
-// nextBtn.addEventListener("click", () => {
-//   if (selectedAnswer === null) {
-//     message.textContent = " Veuillez choisir une réponse avant de continuer.";
-//     return;
-//   }
-
-//   currentQuestion++;
-
-//   if (currentQuestion < questions.length) {
-//     showQuestion(currentQuestion);
-//   } else {
-//     document.querySelector(".question").style.display = "none";
-//     nextBtn.textContent = "Quiz terminé 🎉";
-//     message.textContent = "";
-//   }
-// });
-
-// // Initialisation
-// // showQuestion(currentQuestion);
+export function getEnergyScore() {
+  return energyScore;
+}

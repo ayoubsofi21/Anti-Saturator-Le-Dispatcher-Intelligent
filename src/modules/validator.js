@@ -1,14 +1,8 @@
-export function validateTitle(title) {
-  const regex = /^[a-zA-ZÀ-ÿ0-9\s]{5,50}$/;
-  return regex.test(title.trim());
+export function validateTask(task) {
+  const regex = /^[a-zA-Z0-9\s]{5,50}$/;
+  if (!regex.test(task.title)) return false;
+  if (![1, 2, 3, 4, 5].includes(task.urgency)) return false;
+  if (![1, 2, 3, 4, 5].includes(task.importance)) return false;
+  if (![1, 2, 3, 4, 5].includes(task.effort)) return false;
+  return true;
 }
-
-export function validateScore(value){
-    const number = Number(value);
-    return(
-        !isNaN(number)&&
-        Number.isInteger(number)&&
-        number >= 1 && number <= 5
-    );
-}
-
