@@ -27,12 +27,31 @@ const quizQuestions = [
     ],
   },
 ];
-// Track the current question and energy score
 let currentQuestion = 1; // Start at the first question
 let energyScore = 5; // Default energy score
 
 export function renderQuiz() {
   const container = document.getElementById("quiz-container");
+
+  // Check if we've completed the quiz
+  if (currentQuestion > quizQuestions.length) {
+    container.innerHTML = `
+      <h3>Félicitations !</h3>
+      <p>Vous avez terminé le quiz avec une énergie de ${energyScore}</p>
+      <button id="start-again">Recommencer</button>
+    `;
+
+    // Restart the quiz if "Recommencer" button is clicked
+    document.getElementById("start-again").addEventListener("click", () => {
+      currentQuestion = 1; // Reset to first question
+      energyScore = 5; // Reset energy score
+      renderQuiz(); // Re-render the quiz from the beginning
+    });
+
+    return; // Stop further rendering once the quiz is completed
+  }
+
+  // If not completed, continue to render the next question
   container.innerHTML = `
     <form id="quiz-form">
       <h3>Question ${currentQuestion}:</h3>
@@ -58,7 +77,7 @@ export function renderQuiz() {
       renderQuiz(); // Re-render the quiz with the next question
     } else {
       alert(`Vous avez terminé le quiz avec une énergie de ${energyScore}`);
-      // After the last question, you can trigger some action like showing the task form
+      renderQuiz(); // Trigger final state rendering after quiz completion
     }
   });
 

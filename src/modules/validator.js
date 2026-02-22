@@ -1,4 +1,5 @@
 export function validateTask(task) {
+  console.log("Validating task:", task); // Log the task being validated
   const regex = /^[a-zA-Z0-9\s]{5,50}$/;
   if (!regex.test(task.title)) return false;
   if (![1, 2, 3, 4, 5].includes(task.urgency)) return false;
