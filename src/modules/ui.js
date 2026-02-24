@@ -1,4 +1,3 @@
-// src/modules/ui.js
 export const headerfunc = () => `<header class="app-header">Anti-Saturator</header>`;
 
 export const formulair = () => {

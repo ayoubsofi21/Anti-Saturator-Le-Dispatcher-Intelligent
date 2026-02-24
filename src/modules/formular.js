@@ -1,7 +1,6 @@
 
 import { saveTasks, getTasks } from "./storage.js"; 
 
-import { validateTitle, validateScore } from "./validator.js";
 
 export function initFormLogic() {
     const titleInput = document.getElementById("task-title");
